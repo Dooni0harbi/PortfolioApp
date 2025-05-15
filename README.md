@@ -1,12 +1,13 @@
-# React + Vite
+Portfolio with unique design 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+link to the App:
+https://portfolioapp0.netlify.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+App Demo :
 
-## Expanding the ESLint configuration
+![portfolio4](https://github.com/user-attachments/assets/178015b2-ebf9-44d8-8812-bd86e83e0caa)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![portfolio3](https://github.com/user-attachments/assets/ef5621e3-5914-496a-bbdb-884478878a51)
+![portfolio2](https://github.com/user-attachments/assets/be884ba7-47cf-41db-9b97-5736813a980c)
+![portfolio1](https://github.com/user-attachments/assets/5bcf1393-5c57-4537-a790-db2c65efab07)
