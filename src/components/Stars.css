@@ -1,0 +1,25 @@
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* In front of background, behind main content */
+    pointer-events: none; /* So clicks pass through */
+  }
+  
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: flicker 2s infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+  }
+  

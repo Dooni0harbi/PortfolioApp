@@ -1,0 +1,61 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* This creates space between the text and image */
+    height: 100vh;
+    text-align: center;
+    color: white;
+    gap: 3rem;
+  }
+  
+  .home-container h1 {
+    margin-bottom: 2rem; /* Adds space between h1 and image */
+    font-size: 2rem;
+  }
+  
+  
+  .typewriter {
+    overflow: hidden;              /* Ensures the text is clipped */
+    border-right: 3px solid white; /* Simulates cursor */
+    white-space: nowrap;           /* Prevents line break */
+    width: 0;                      /* Hidden by default */
+    animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+  
+
+  .center-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: rgbShadow 10s linear infinite;
+    box-shadow: 0 0 30px 10px hsl(0, 100%, 70%);
+  }
+  @keyframes rgbShadow {
+    0% {
+      box-shadow: 0 0 30px 10px hsl(0, 13%, 87%);
+    }
+    25% {
+      box-shadow: 0 0 30px 10px hsl(216, 100%, 70%);
+    }
+    50% {
+      box-shadow: 0 0 30px 10px hsl(180, 100%, 70%);
+    }
+    75% {
+      box-shadow: 0 0 30px 10px hsl(270, 100%, 70%);
+    }
+    100% {
+      box-shadow: 0 0 30px 10px hsl(360, 100%, 70%);
+    }
+  }
+  

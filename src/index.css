@@ -1,0 +1,58 @@
+/* --- Your existing code stays exactly as it is! ---
+
+/* Add this after your existing CSS */
+
+/* Moving RGB Abstract Background */
+/* body::before {
+  content: "";
+  position: fixed; /* fixed so it covers whole screen */
+  /* top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255,0,150,0.3),
+    rgba(0,229,255,0.3),
+    rgba(0,255,100,0.3),
+    rgba(255,230,0,0.3) */
+
+  /* background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+  z-index: -10; /* put it behind everything */
+  /* filter: blur(100px); */
+
+
+/* Animation for RGB background */
+/* @keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
+/* Card styling
+.page-card {
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 40px;
+  background-color: #111;
+  border-radius: 20px;
+  box-shadow: 0 0 30px 10px rgba(0,255,255,0.6);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+} */
+
+/* Make the neon glow animate (optional)
+@keyframes neonGlow {
+  0% { box-shadow: 0 0 30px 10px rgba(255,0,150,0.7); }
+  25% { box-shadow: 0 0 30px 10px rgba(0,229,255,0.7); }
+  50% { box-shadow: 0 0 30px 10px rgba(0,255,100,0.7); }
+  75% { box-shadow: 0 0 30px 10px rgba(255,230,0,0.7); }
+  100% { box-shadow: 0 0 30px 10px rgba(255,0,150,0.7); }
+} */
+
+/* .page-card {
+  animation: neonGlow 8s infinite alternate;
+}  */

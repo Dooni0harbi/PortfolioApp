@@ -1,0 +1,54 @@
+.navbar {
+    position: fixed;
+    top: 80px; /* stays closer to page */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 25px; /* little more space between bubbles */
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bubble {
+    padding: 2px;
+    margin: 2px;
+    width: 110px;  /* BUBBLE IS BIGGER */
+    height: 110px; /* BUBBLE IS BIGGER */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .bubble:nth-child(2) {
+    animation-duration: 5s;
+  }
+  .bubble:nth-child(3) {
+    animation-duration: 6s;
+  }
+  .bubble:nth-child(4) {
+    animation-duration: 7s;
+  }
+  
+  .bubble li {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem; /* FONT SIZE IS LARGER */
+    text-align: center;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  
