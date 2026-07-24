@@ -592,6 +592,70 @@ animation: blink-caret 1.5s step-end infinite;
   font-size: 16px;
   cursor: pointer;
 }
+/* ===== الروبوت المطل من أسفل الصفحة ===== */
+.peeking-robot {
+  position: fixed;
+  bottom: -34px;
+  right: 30px;
+  width: 100px;
+  height: 76px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 90;
+  animation: robot-peek-bob 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(47, 143, 255, 0.35));
+}
+.peeking-robot-svg {
+  width: 100%;
+  height: 100%;
+}
+.peeking-robot:hover {
+  animation-play-state: paused;
+  bottom: -14px;
+  transition: bottom 0.25s ease;
+}
+@keyframes robot-peek-bob {
+  0%, 100% {
+    bottom: -34px;
+  }
+  50% {
+    bottom: -24px;
+  }
+}
+@media (max-width: 640px) {
+  .peeking-robot {
+    right: 14px;
+    width: 80px;
+    height: 60px;
+  }
+}
+
+/* ===== شبكة لعبة إكس أو ===== */
+.ttt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  grid-template-rows: repeat(3, 64px);
+  gap: 8px;
+  justify-content: center;
+  margin: 16px auto 0;
+}
+.ttt-cell {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ttt-cell:not(:disabled):hover {
+  background: var(--accent-soft);
+}
+.ttt-cell:disabled {
+  cursor: default;
+}
 
 /* ===== Certifications ===== */
 .stats-grid {
