@@ -38,8 +38,8 @@ const languages = [
 const introQuote = "\"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.\" — Thomas Edison";
 
 const NAME_SPEED = 90; // ms لكل حرف بالاسم
-const QUOTE_SPEED = 35; // ms لكل حرف بالاقتباس
-const QUOTE_HOLD = 1400; // كم يجلس الاقتباس ظاهر بعد ما يخلص
+const QUOTE_SPEED = 70; // ms لكل حرف بالاقتباس
+const QUOTE_HOLD = 3000; // كم يجلس الاقتباس ظاهر بعد ما يخلص
 const FADE_MS = 500;
 
 export default function Hero({
