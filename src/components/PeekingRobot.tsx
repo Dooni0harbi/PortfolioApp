@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const WIN_LINES = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -32,14 +32,55 @@ function botMove(board) {
   return empty[Math.floor(Math.random() * empty.length)];
 }
 
+// Tiny on-the-fly sound effects using the Web Audio API — no audio files needed
+function playTone(frequencies, durationMs = 160) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    frequencies.forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.value = freq;
+      const start = ctx.currentTime + idx * (durationMs / 1000);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.2, start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + durationMs / 1000);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + durationMs / 1000 + 0.05);
+    });
+  } catch (e) {
+    // ignore if audio isn't supported/allowed
+  }
+}
+
+function playWinSound() {
+  playTone([523.25, 659.25, 783.99, 1046.5], 140); // ascending major arpeggio
+}
+function playLoseSound() {
+  playTone([392, 349.23, 293.66, 261.63], 180); // descending tones
+}
+function playDrawSound() {
+  playTone([440, 440], 200);
+}
+
 export default function PeekingRobot() {
   const [visible, setVisible] = useState(true);
   const [showPrompt, setShowPrompt] = useState(false);
   const [showGame, setShowGame] = useState(false);
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState("player"); // player = X, bot = O
+  const soundPlayedRef = useRef(false);
 
   const winner = getWinner(board);
+
+  if (winner && !soundPlayedRef.current) {
+    soundPlayedRef.current = true;
+    if (winner === "X") playWinSound();
+    else if (winner === "O") playLoseSound();
+    else playDrawSound();
+  }
 
   const playerMove = (i) => {
     if (board[i] || winner || turn !== "player") return;
@@ -62,6 +103,7 @@ export default function PeekingRobot() {
   const resetGame = () => {
     setBoard(Array(9).fill(null));
     setTurn("player");
+    soundPlayedRef.current = false;
   };
 
   const closeEverything = () => {
