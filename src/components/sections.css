@@ -1,4 +1,4 @@
-/* ===== متغيرات عامة ===== */
+/* ===== Global variables ===== */
 :root {
   --bg: #0b0b10;
   --bg-soft: #121218;
@@ -93,7 +93,7 @@ body {
   color: var(--accent);
 }
 
-/* زر Resume — أيقونة تحميل تظهر بس عند الـ hover */
+/* Resume button — download icon reveals on hover */
 .resume-btn {
   display: inline-flex;
   align-items: center;
@@ -428,14 +428,14 @@ body {
 
 @media (max-width: 640px) {
   .carousel-arrow {
-    display: none; /* على الجوال السحب باللمس هو الطريقة الطبيعية */
+    display: none;
   }
   .project-card {
     flex-basis: 82vw;
   }
 }
 
-/* ===== تأثير الليزر عند الـ hover ===== */
+/* ===== Laser sweep hover effect ===== */
 .laser-card {
   position: relative;
   overflow: hidden;
@@ -470,7 +470,7 @@ body {
   }
 }
 
-/* ===== روبوت الإحماء (Lottie) تحت قسم التواصل ===== */
+/* ===== Warm-up robot (Lottie) under the contact section ===== */
 .robot-scene {
   max-width: 220px;
   margin: 24px auto 32px;
@@ -480,7 +480,7 @@ body {
   height: auto;
 }
 
-/* ===== الاسم يُكتب حرف حرف عبر JS — مؤشر وامض يلزق دايمًا بآخر حرف ===== */
+/* ===== Name typing effect (JS-driven) — cursor stays glued to the last letter ===== */
 .typewriter-js {
   display: inline;
 }
@@ -489,9 +489,9 @@ body {
   width: 3px;
   height: 0.9em;
   margin-inline-start: 2px;
-vertical-align: baseline;
+  vertical-align: baseline;
   background: var(--accent);
-animation: blink-caret 1.5s step-end infinite;
+  animation: blink-caret 1.2s step-end infinite;
 }
 @keyframes blink-caret {
   50% {
@@ -499,7 +499,7 @@ animation: blink-caret 1.5s step-end infinite;
   }
 }
 
-/* ===== مقولة تُكتب حرف حرف تحت الاسم — تلتف بشكل طبيعي (مو سطر واحد) ثم تختفي ===== */
+/* ===== Quote typing effect under the name — wraps naturally, then fades ===== */
 .intro-quote-wrap {
   overflow: hidden;
   max-height: 140px;
@@ -524,7 +524,7 @@ animation: blink-caret 1.5s step-end infinite;
   opacity: 0;
 }
 
-/* التخصص ثم النبذة يظهرون بعد اختفاء المقولة */
+/* Role and bio fade in after the quote disappears */
 .fade-item {
   opacity: 0;
   transition: opacity 0.5s ease-out;
@@ -533,7 +533,7 @@ animation: blink-caret 1.5s step-end infinite;
   opacity: 1;
 }
 
-/* ===== كارد رسالة التواصل المنبثق ===== */
+/* ===== Contact message modal ===== */
 .message-modal-overlay {
   position: fixed;
   inset: 0;
@@ -592,17 +592,20 @@ animation: blink-caret 1.5s step-end infinite;
   font-size: 16px;
   cursor: pointer;
 }
-/* ===== الروبوت المطل من أسفل الصفحة ===== */
+
+/* ===== Robot peeking from the left edge of the screen ===== */
 .peeking-robot {
   position: fixed;
-  bottom: -34px;
-  right: 30px;
-  width: 100px;
-  height: 76px;
+  top: 50%;
+  left: -36px;
+  width: 110px;
+  height: 84px;
   border: none;
   background: transparent;
   cursor: pointer;
   z-index: 90;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
   animation: robot-peek-bob 3s ease-in-out infinite;
   filter: drop-shadow(0 0 10px rgba(47, 143, 255, 0.35));
 }
@@ -612,26 +615,26 @@ animation: blink-caret 1.5s step-end infinite;
 }
 .peeking-robot:hover {
   animation-play-state: paused;
-  bottom: -14px;
-  transition: bottom 0.25s ease;
+  left: -4px;
+  transition: left 0.25s ease;
 }
 @keyframes robot-peek-bob {
   0%, 100% {
-    bottom: -34px;
+    left: -36px;
   }
   50% {
-    bottom: -24px;
+    left: -24px;
   }
 }
 @media (max-width: 640px) {
   .peeking-robot {
-    right: 14px;
-    width: 80px;
-    height: 60px;
+    left: -30px;
+    width: 88px;
+    height: 68px;
   }
 }
 
-/* ===== شبكة لعبة إكس أو ===== */
+/* ===== Tic-tac-toe grid ===== */
 .ttt-grid {
   display: grid;
   grid-template-columns: repeat(3, 64px);
@@ -767,3 +770,4 @@ animation: blink-caret 1.5s step-end infinite;
     grid-template-columns: 1fr;
   }
 }
+
