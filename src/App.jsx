@@ -1,14 +1,5 @@
 import "./components/sections.css";
 import StarsBackground from "./components/StarsBackground";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Certifications from "./components/Certifications";
-import Contact from "./components/Contact";
-import PeekingRobot from "./components/PeekingRobot";
-
-import "./components/sections.css";
-import StarsBackground from "./components/StarsBackground";
 import PeekingRobot from "./components/PeekingRobot";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
