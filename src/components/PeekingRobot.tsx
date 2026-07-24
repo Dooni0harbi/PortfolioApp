@@ -13,7 +13,6 @@ function getWinner(board) {
   return board.every(Boolean) ? "draw" : null;
 }
 
-// Simple heuristic AI: win if possible, else block, else take center, else random
 function botMove(board) {
   const empty = board.map((v, i) => (v ? null : i)).filter((i) => i !== null);
 
