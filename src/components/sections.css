@@ -489,7 +489,7 @@ body {
   width: 3px;
   height: 0.9em;
   margin-inline-start: 2px;
-  vertical-align: text-bottom;
+vertical-align: baseline;
   background: var(--accent);
 animation: blink-caret 1.5s step-end infinite;
 }
