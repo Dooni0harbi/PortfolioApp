@@ -254,7 +254,7 @@ body {
   display: flex;
   gap: 56px;
   width: max-content;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 45s linear infinite;
 }
 .tech-marquee:hover .tech-track {
   animation-play-state: paused;
