@@ -9,8 +9,7 @@ export default function Navbar({ active = "Home" }) {
   return (
     <>
       <nav className="navbar">
-        <div className="logo">{"</>"}</div>
-
+        <div className="logo">{"✦"}</div>
         <ul className="navbar-links">
           {links.map((link) => (
             <li key={link}>
