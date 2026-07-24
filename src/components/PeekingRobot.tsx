@@ -13,7 +13,7 @@ function getWinner(board) {
   return board.every(Boolean) ? "draw" : null;
 }
 
-// ذكاء بسيط: يحاول يفوز، وإلا يصد، وإلا ياخذ الوسط، وإلا عشوائي
+// Simple heuristic AI: win if possible, else block, else take center, else random
 function botMove(board) {
   const empty = board.map((v, i) => (v ? null : i)).filter((i) => i !== null);
 
@@ -80,23 +80,31 @@ export default function PeekingRobot() {
 
   return (
     <>
-      {/* الروبوت المطل من أسفل الصفحة */}
+      {/* Robot peeking from the left edge of the screen */}
       <button
         className="peeking-robot"
         onClick={() => setShowPrompt(true)}
         aria-label="Play with the robot"
       >
         <svg viewBox="0 0 120 90" className="peeking-robot-svg">
-          <rect x="20" y="20" width="80" height="70" rx="18" fill="#e6ecf5" />
-          <circle cx="45" cy="48" r="8" fill="#2f8fff" />
-          <circle cx="75" cy="48" r="8" fill="#2f8fff" />
-          <rect x="42" y="65" width="36" height="5" rx="2.5" fill="#0b0b10" opacity="0.5" />
-          <line x1="60" y1="20" x2="60" y2="6" stroke="#2f8fff" strokeWidth="3" />
-          <circle cx="60" cy="4" r="5" fill="#2f8fff" />
+          {/* pointed ears */}
+          <path d="M28 34 L14 4 L42 24 Z" fill="#c7d2e0" />
+          <path d="M92 34 L106 4 L78 24 Z" fill="#c7d2e0" />
+
+          {/* head */}
+          <rect x="24" y="22" width="72" height="60" rx="22" fill="#e6ecf5" />
+
+          {/* glowing eyes */}
+          <circle cx="46" cy="48" r="7" fill="#2f8fff" />
+          <circle cx="74" cy="48" r="7" fill="#2f8fff" />
+
+          {/* snout */}
+          <rect x="44" y="60" width="32" height="16" rx="8" fill="#c7d2e0" />
+          <circle cx="60" cy="68" r="3.2" fill="#0b0b10" />
         </svg>
       </button>
 
-      {/* سؤال: طفشان؟ العب معايا */}
+      {/* prompt */}
       {showPrompt && (
         <div className="message-modal-overlay" onClick={() => setShowPrompt(false)}>
           <div className="message-modal-card" onClick={(e) => e.stopPropagation()} style={{ textAlign: "center" }}>
@@ -119,7 +127,7 @@ export default function PeekingRobot() {
         </div>
       )}
 
-      {/* لعبة إكس أو */}
+      {/* tic-tac-toe game */}
       {showGame && (
         <div className="message-modal-overlay" onClick={closeEverything}>
           <div className="message-modal-card" onClick={(e) => e.stopPropagation()} style={{ textAlign: "center" }}>
