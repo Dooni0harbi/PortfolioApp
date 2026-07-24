@@ -5,6 +5,8 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
+import PeekingRobot from "./components/PeekingRobot";
+
 
 export default function App() {
   return (
