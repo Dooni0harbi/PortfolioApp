@@ -1,21 +1,6 @@
 import { useEffect, useRef } from "react";
 
-/**
- * StarsBackground
- * خلفية نجوم متلألئة (تطفي وتنور) مع توهج خفيف — تُرسم بالـ canvas لأداء سلس.
- *
- * طريقة الاستخدام:
- * 1) ضعي هذا الملف في src/components/StarsBackground.jsx
- * 2) في App.jsx (أول عنصر داخل الـ return):
- *      import StarsBackground from "./components/StarsBackground";
- *      ...
- *      <StarsBackground />
- *      <div className="app-content">...بقية المحتوى...</div>
- * 3) تأكدي أن العنصر اللي بعدها (المحتوى) عنده position: relative
- *    و z-index أعلى منها حتى يظهر فوق الخلفية.
- *
- * تقدرين تتحكمين بالكثافة واللون من الـ props تحت.
- */
+
 export default function StarsBackground({
   starCount = 140,
   backgroundColor = "#0b0b0e",
@@ -43,7 +28,7 @@ export default function StarsBackground({
         y: Math.random() * height,
         radius: Math.random() * 1.4 + 0.3,
         baseAlpha: Math.random() * 0.6 + 0.3,
-        twinkleSpeed: Math.random() * 0.02 + 0.005,
+        twinkleSpeed: Math.random() * 0.01 + 0.0025,
         twinklePhase: Math.random() * Math.PI * 2,
         driftSpeed: Math.random() * 0.05 + 0.01,
       }));
@@ -59,7 +44,7 @@ export default function StarsBackground({
           Math.sin(time * star.twinkleSpeed + star.twinklePhase) * 0.5 + 0.5;
         const alpha = star.baseAlpha * (0.3 + twinkle * 0.7);
 
-        // هالة خفيفة جدًا (اختيارية) — لو glowStrength = 0 تختفي تمامًا وتصير نقطة بسيطة فقط
+        //هالة خفيفة جدًا (اختياري)و glowStrength = 0 تختفي تمامًا وتصير نقطة بسيطة فقط
         if (glowStrength > 0) {
           const glow = ctx.createRadialGradient(
             star.x,
