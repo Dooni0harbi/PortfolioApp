@@ -491,7 +491,7 @@ body {
   margin-inline-start: 2px;
   vertical-align: text-bottom;
   background: var(--accent);
-  animation: blink-caret 0.75s step-end infinite;
+animation: blink-caret 1.5s step-end infinite;
 }
 @keyframes blink-caret {
   50% {
